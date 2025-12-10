@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Player, GamePhase, LogEntry, Stats, Item, Equipment, CraftingRecipe, GameMode, DilemmaChoice, PlayerCombatAction, Vote, VoteType, BossInteractiveEvent, BossInteractiveOption } from './types';
 import { CharacterCreation } from './components/CharacterCreation';
@@ -653,9 +652,15 @@ function App() {
             <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-400 to-blue-700 tracking-widest animate-pulse-glow text-center">
             JOGUIN LEGAL RPG
             </h1>
-            <div className="flex flex-col md:flex-row gap-4 w-full max-w-md">
-                <Button onClick={() => handleModeSelect('SOLO')} className="flex-1 py-8 text-xl" variant="system">SOLO</Button>
-                <Button onClick={() => handleModeSelect('MULTIPLAYER')} className="flex-1 py-8 text-xl" variant="primary">PARTY</Button>
+            <div className="flex flex-col md:flex-row gap-6 w-full max-w-2xl">
+                <div className="flex-1 flex flex-col gap-2">
+                  <Button onClick={() => handleModeSelect('SOLO')} className="py-8 text-xl w-full" variant="system">SOLO</Button>
+                  <p className="text-slate-500 text-sm text-center">Aventura solitária. Apenas você contra o Sistema.</p>
+                </div>
+                <div className="flex-1 flex flex-col gap-2">
+                  <Button onClick={() => handleModeSelect('MULTIPLAYER')} className="py-8 text-xl w-full" variant="primary">PARTY</Button>
+                  <p className="text-slate-500 text-sm text-center">Junte amigos no mesmo dispositivo. Votação e Coop.</p>
+                </div>
             </div>
         </div>
     );
